@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>宽带连接错误代码720解决方案</title>
+      <link href="/2019/01/02/720solution/"/>
+      <url>/2019/01/02/720solution/</url>
+      
+        <content type="html"><![CDATA[<h2 id="gt-720：不能建立到远程计算机的连接。你可能需要更改此连接的网络设置。"><a href="#gt-720：不能建立到远程计算机的连接。你可能需要更改此连接的网络设置。" class="headerlink" title="&gt;720：不能建立到远程计算机的连接。你可能需要更改此连接的网络设置。"></a>&gt;720：不能建立到远程计算机的连接。你可能需要更改此连接的网络设置。</h2><p>客户端若出现这种错误，可以使用网络诊断推荐的方案：<strong>网络重置</strong>。五分钟后自动重启再试可能成功。<br>但若不成功，可以用第二种方法。</p><p>从<strong>设备管理器</strong>中找到网络适配器，卸载掉其中所有以WAN开头的驱动。<br>卸载完后再选择列表第一个选项（DESKTOP-85COU5J)，右击选择<strong>扫描检测硬件改动</strong>。再试应该就成功了！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> other </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> other </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于这个博客</title>
       <link href="/2018/12/27/my-first-post/"/>
       <url>/2018/12/27/my-first-post/</url>

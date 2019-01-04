@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>html超文本标记语言笔记1</title>
+      <link href="/2019/01/04/htmlnote1/"/>
+      <url>/2019/01/04/htmlnote1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="html超文本标记语言笔记（一）"><a href="#html超文本标记语言笔记（一）" class="headerlink" title="html超文本标记语言笔记（一）"></a>html超文本标记语言笔记（一）</h1><h2 id="一、html常用标签"><a href="#一、html常用标签" class="headerlink" title="一、html常用标签"></a>一、html常用标签</h2><p>\&lt;html> –网页开始 最后要有结束标签 \</p><p><strong>结束标签一定不能忘了</strong></p><p>\&lt;body> –网页主体 \</p><p>\&lt;h1> 这是一个标题 \</p><h1> 共有大小六个标题格式，h1 to h6<p></p></h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>以太网没有有效的IP配置解决方案</title>
       <link href="/2019/01/03/1231solution/"/>
       <url>/2019/01/03/1231solution/</url>

@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Nero">
 <meta property="og:description" content="python爬虫笔记爬虫分为四个步骤，首先获取数据，然后解析数据，再提取数据，最后是存储数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/18/pythonnote2/source/_posts/pythonnote2/pic1.png">
-<meta property="og:updated_time" content="2019-01-18T14:21:40.147Z">
+<meta property="og:image" content="/18/pythonnote2/pic1.png">
+<meta property="og:updated_time" content="2019-01-18T14:26:21.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pythonnote2">
 <meta name="twitter:description" content="python爬虫笔记爬虫分为四个步骤，首先获取数据，然后解析数据，再提取数据，最后是存储数据">
-<meta name="twitter:image" content="/18/pythonnote2/source/_posts/pythonnote2/pic1.png">
+<meta name="twitter:image" content="/18/pythonnote2/pic1.png">
 
 
 
@@ -376,7 +376,7 @@
       
         <h2 id="python爬虫笔记"><a href="#python爬虫笔记" class="headerlink" title="python爬虫笔记"></a>python爬虫笔记</h2><p>爬虫分为四个步骤，首先获取数据，然后解析数据，再提取数据，最后是存储数据</p>
 <a id="more"></a>
-<p><img src="/18/pythonnote2/source/_posts/pythonnote2/pic1.png" alt="前三个步骤的示意图"></p>
+<p><img src="/18/pythonnote2/pic1.png" alt="前三个步骤的示意图"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import requests #首先引入requests库</span><br><span class="line">res=requests.get(&apos;URL&apos;)#向服务器发送了一个请求,把服务器响应结果赋给res，为response对象</span><br><span class="line">res.encoding=&apos;gbk&apos; #定义response对象的编码，一般会自己判断不必写，如果错误则补上正确的码表</span><br><span class="line">pic=res.content #获取二进制数据</span><br><span class="line">note=res.text #获取字符串数据</span><br><span class="line">print(res.status_code)检查是否请求成功，成功则为200</span><br><span class="line">k=open(&apos;note.txt&apos;,&apos;a+&apos;) #将res.text内容写在note.txt文件末尾</span><br><span class="line">m=open(&apos;pic.jpg&apos;或&apos;music.mp3&apos;,&apos;wb&apos;) #以二进制形式生成图片或音频</span><br><span class="line">k.write(pic\note)</span><br><span class="line">k.close() #基本文件读写操作</span><br></pre></td></tr></table></figure>
 <p>以上是一般的获取数据的方法，接下来是用BeautifulSoup解析数据，从源码入手爬取数据。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup #引入bs库</span><br><span class="line">res=requests.get(&apos;URL&apos;)</span><br><span class="line">soup=BeautifulSoup(&apos;字符串数据,可以是res.text&apos;，&apos;html.parser&apos;) #解析数据，html.parser是解析器</span><br></pre></td></tr></table></figure>

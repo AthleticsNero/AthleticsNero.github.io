@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>pythonnote2</title>
+      <title>CSS笔记</title>
+      <link href="/2019/01/25/cssnote/"/>
+      <url>/2019/01/25/cssnote/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSS笔记"><a href="#CSS笔记" class="headerlink" title="CSS笔记"></a>CSS笔记</h1><h2 id="一、如何创建CSS"><a href="#一、如何创建CSS" class="headerlink" title="一、如何创建CSS"></a>一、如何创建CSS</h2><ol><li>内联样式：也叫<strong>行间样式</strong>在标签后面写上style={…}就可以，但仅限于这个标签产生样式作用  </li><li>内部样式表：当单个文档需要特殊的样式时，就应该使用内部样式表。可以使用<code>&lt;style&gt;</code> 标签在文档头部定义内部样式表.  </li><li><p>外部样式表：在html的head标签内加上link标签，href的值就是css文件的路径，但是.css文件内不能包含任何html标签。</p><a id="more"></a><h2 id="二、选择器"><a href="#二、选择器" class="headerlink" title="二、选择器"></a>二、选择器</h2></li><li><p>id选择器：</p><p> 以<code>#id值{...}</code>的格式定义某具有该id的标签的样式。</p><p> 在用来建立派生选择器时，在id后面空格在写上特定标签的名，就可以仅修改其部分。</p></li><li><p>类选择器：</p><p> 以<code>.类名{...}</code>这样的格式定义属于该类型的标签的样式。</p><p> 如果一个标签运用css样式时要用两种类，则是clss=”1 2”,clss要保证只有一个。</p><p> 在用来建立派生选择器时，可以在后面空格加标签，代表该类下的一个标签使用该样式。也可以标签.类名，这样仅代表该标签下该类使用这个样式。</p></li><li><p>属性选择器:</p><p> 以<code>[属性名]</code>这样的格式定义含有该属性的所有标签的样式。</p><p> 当然也可以<code>[属性名=“属性值”]</code>这样可以更加具体，而且属性值也可以取多个。</p></li><li><p>标签选择器:</p><p> 以<code>标签名{...}</code>这样的格式定义的对所有该标签生效,当然加个空格再加个子标签那就成了派生选择器了。</p></li><li><p>通配符选择器：</p><p> 以<code>*{...}</code>这样定义的样式会应用到网页所有标签，甚至包括head、body这样的大标签。</p></li><li><p>派生选择器：</p><p> 又叫父子选择器，只要满足父子关系就可以用，而且并不一定要是直接父子级，间接亦可。每一层级不限定使用哪种表示形式。</p></li><li><p>直接子元素选择器：</p><p> 在两个标签之间加上<code>&gt;</code>符号，就限定了直接的父子关系。与派生区别。</p></li><li><p>分组选择器：</p><p> 用<code>，</code>分割开的各组共用同一样式。</p></li></ol><h3 id="三、样式采用的优先级"><a href="#三、样式采用的优先级" class="headerlink" title="三、样式采用的优先级"></a>三、样式采用的优先级</h3><p>当一个标签采用css的时候发生样式重叠的时候，就得根据优先级来判断生效的样式了。</p><p>！important &gt; 行间样式 &gt; id &gt; class = 属性 &gt; 标签 &gt; 通配符</p><p>其权重分别为（256进制）：Infinity 1000 100 10 1 0</p><p><strong>当其优先级相同的时候则根据先来后到，后者覆盖前者处理。</strong></p><p>当采用并列多项的选择器时，其优先级计算方法是各项权重值相加。另外无穷大加一比无穷大更大。</p><h3 id="四、CSS常用属性"><a href="#四、CSS常用属性" class="headerlink" title="四、CSS常用属性"></a>四、CSS常用属性</h3><ol><li>font-size： 字体大小，默认16px。其实际改变的是字体的高  </li><li>font-weight： 字体粗细，默认是normal，可改变为lighter、normal、bold、bolder  </li><li>font-family： 字体样式，默认是arirys。  </li><li>font-style： 当其值为italic时，文字斜体展示。  </li><li>color： 定义字体的颜色，一般用六位rgb十六进制的代码来表示，当每两位相同时可缩写到三位。另外还能用颜色函数，rgb(n1,n2,n3)，每一位取值范围是0-255，亦可0%-100%。  </li><li><p>border: 边框，它有三个参数，第一个设置边框的宽度，如1px；第二个是边框的style，如solid实线，dotted是点状虚线，dashed是条状虚线；第三个是边框的颜色。另外transparent是透明色。</p><p> 另外这个属性还能拆分开来，分别border-top，bottom，left，right可以再拆分设置参数</p></li><li><p>backgroundcolor：背景颜色</p></li><li></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python爬虫笔记</title>
       <link href="/2019/01/18/pythonnote2/"/>
       <url>/2019/01/18/pythonnote2/</url>
       
@@ -29,7 +54,7 @@
     
     
     <entry>
-      <title>Python笔记（一）</title>
+      <title>Python基础知识笔记</title>
       <link href="/2019/01/05/pythonnote1/"/>
       <url>/2019/01/05/pythonnote1/</url>
       
@@ -54,7 +79,7 @@
     
     
     <entry>
-      <title>html超文本标记语言笔记1</title>
+      <title>html超文本标记语言笔记</title>
       <link href="/2019/01/04/htmlnote1/"/>
       <url>/2019/01/04/htmlnote1/</url>
       

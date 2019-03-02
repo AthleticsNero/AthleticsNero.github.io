@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="数据类型：字符串：双引号或者单引号引起来的文本。拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。 整数：python中整数的除法能得到小数，这一点与c不同。">
+<meta name="description" content="数据类型：字符串：双引号或者单引号引起来的文本。拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。 字符串内字符都有序号，正向是从0开始，反向是-1开始。str[-1]指的就是最后一个字符。 字符串的拼接：   号，对于字符串或者非字符串使用该符号就能拼接成一个字符串。   .format()，中间的参数，对应字符串中的{}，相当于c语言里的占位符。   整数：python中整数">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础知识笔记">
 <meta property="og:url" content="apr.zuccpc.xin/2019/01/05/pythonnote1/index.html">
 <meta property="og:site_name" content="Nero">
-<meta property="og:description" content="数据类型：字符串：双引号或者单引号引起来的文本。拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。 整数：python中整数的除法能得到小数，这一点与c不同。">
+<meta property="og:description" content="数据类型：字符串：双引号或者单引号引起来的文本。拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。 字符串内字符都有序号，正向是从0开始，反向是-1开始。str[-1]指的就是最后一个字符。 字符串的拼接：   号，对于字符串或者非字符串使用该符号就能拼接成一个字符串。   .format()，中间的参数，对应字符串中的{}，相当于c语言里的占位符。   整数：python中整数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-25T05:36:47.867Z">
+<meta property="og:updated_time" content="2019-03-02T14:14:27.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识笔记">
-<meta name="twitter:description" content="数据类型：字符串：双引号或者单引号引起来的文本。拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。 整数：python中整数的除法能得到小数，这一点与c不同。">
+<meta name="twitter:description" content="数据类型：字符串：双引号或者单引号引起来的文本。拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。 字符串内字符都有序号，正向是从0开始，反向是-1开始。str[-1]指的就是最后一个字符。 字符串的拼接：   号，对于字符串或者非字符串使用该符号就能拼接成一个字符串。   .format()，中间的参数，对应字符串中的{}，相当于c语言里的占位符。   整数：python中整数">
 
 
 
@@ -373,6 +373,16 @@
 
       
         <h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><h4 id="字符串：双引号或者单引号引起来的文本。"><a href="#字符串：双引号或者单引号引起来的文本。" class="headerlink" title="字符串：双引号或者单引号引起来的文本。"></a>字符串：双引号或者单引号引起来的文本。</h4><p>拼接字符串使用“+”号，要将非字符串类型的数据用str()强制变换。</p>
+<p>字符串内字符都有序号，正向是从0开始，反向是-1开始。str[-1]指的就是最后一个字符。</p>
+<p>字符串的拼接：</p>
+<ol>
+<li><ul>
+<li>号，对于字符串或者非字符串使用该符号就能拼接成一个字符串。</li>
+</ul>
+</li>
+<li><p>.format()，中间的参数，对应字符串中的{}，相当于c语言里的占位符。</p>
+</li>
+</ol>
 <h4 id="整数：python中整数的除法能得到小数，这一点与c不同。"><a href="#整数：python中整数的除法能得到小数，这一点与c不同。" class="headerlink" title="整数：python中整数的除法能得到小数，这一点与c不同。"></a>整数：python中整数的除法能得到小数，这一点与c不同。</h4><a id="more"></a>
 <h4 id="布尔值：两个数据比较中产生布尔值。True-False"><a href="#布尔值：两个数据比较中产生布尔值。True-False" class="headerlink" title="布尔值：两个数据比较中产生布尔值。True False"></a>布尔值：两个数据比较中产生布尔值。True False</h4><pre><code>0、[]、{}、‘’没有内容的这些符号都代表了false。
 </code></pre><h4 id="列表："><a href="#列表：" class="headerlink" title="列表："></a>列表：</h4><p>s = [a1,a2,a3,a4]各个元素有自己的位置，从s[0]开始，位置又叫索引</p>

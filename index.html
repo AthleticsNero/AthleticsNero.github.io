@@ -375,65 +375,14 @@
 
       
         
-          
-            <h1 id="Flutter基本结构"><a href="#Flutter基本结构" class="headerlink" title="Flutter基本结构"></a>Flutter基本结构</h1><p>以一个helloworld程序展示一个flutter应用的基本结构。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">void main() =&gt; runApp(Myapp());</span><br><span class="line">class Myapp extends StatelessWidget&#123;</span><br><span class="line">    @override</span><br><span class="line">    Widget build(BuildContext context) &#123;</span><br><span class="line">        return MaterialApp(</span><br><span class="line">            title: &apos;Hello World&apos;,</span><br><span class="line">            home: Scaffold(</span><br><span class="line">                appBar: new AppBar(</span><br><span class="line">                title: Text(&apos;Hello World&apos;),</span><br><span class="line">                ),</span><br><span class="line">            body: Center(</span><br><span class="line">                child: Text(&apos;Hello Flutter!&apos;,style: TextStyle(fontSize: 25.0),),</span><br><span class="line">                )</span><br><span class="line">            ),</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Flutter-常用控件"><a href="#Flutter-常用控件" class="headerlink" title="Flutter 常用控件"></a>Flutter 常用控件</h1><h2 id="1-Text控件"><a href="#1-Text控件" class="headerlink" title="1.Text控件"></a>1.Text控件</h2><p>textAlign：TextAlign.center 控制文本居中显示，当然还有left、right、start、end等属性值</p>
-<p>maxLines：该文本最多显示成几行，填数字即可。溢出部分不显示。</p>
-<p>overflow：文本溢出处理，属性值TetxOverflow.(clip)(fade)(ellipsis),分别是切除，渐变，省略</p>
-<p><strong>style</strong>：TextStyle()内包含其他属性。fontsize：25.0(要用浮点数)。color:Color.fromARGB(a,r,g,b)。</p>
-<p>decoration:TextDecoration.underline代表文本加下划线。</p>
-<p>decorationstyle：TextDecorationStyle.solid代表装饰是实线。</p>
-<h2 id="2-Container控件"><a href="#2-Container控件" class="headerlink" title="2.Container控件"></a>2.Container控件</h2><p>相当于html里的div，就是一个块儿。</p>
-<p>alignment:Alignment.center–对齐格式，点后面也可以带两个单词，比如bottomleft，即底部靠左，也可以用坐标(x,y)表示。</p>
-<p>对于一个div，肯定有width、height、color等属性，其属性值是浮点数，得带小数点。</p>
-<p>padding和margin： EdgeInsets.all(10.0)代表上下左右四个方向都有10.0的padding或者margin。当然用方法.fromLTRB带四个参数更随心所欲。</p>
-<p>decoration: new BoxDecoration(),内部加其他属性。比如gradient(渐变色): LinearGradient(colors:[Colors.blue,colors.green])。注意渐变色与color冲突。</p>
-<p>还能加border:Border.all(width:5.0,color:Colors.red),代表四个方向的边框线。</p>
-<h2 id="3-Image控件"><a href="#3-Image控件" class="headerlink" title="3.Image控件"></a>3.Image控件</h2><p>new一个Image控件，有四种类型，分别是asset（本地资源）、file（本地图片）、memory、network（网络图片）。</p>
-<p>加入图片后还可以用fit:BoxFit选择填充方法。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性名称</th>
-<th style="text-align:center">样式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BoxFit.contain</td>
-<td style="text-align:center">全图居中显示但不充满，显示原比例</td>
-</tr>
-<tr>
-<td style="text-align:center">BoxFit.fill</td>
-<td style="text-align:center">全图显示且填充满，图片可能会拉伸</td>
-</tr>
-<tr>
-<td style="text-align:center">BoxFit.cover</td>
-<td style="text-align:center">图片可能拉伸，也可能裁剪，但是充满容器</td>
-</tr>
-<tr>
-<td style="text-align:center">BoxFit.fitHeight</td>
-<td style="text-align:center">图片可能拉伸，可能裁剪，高度充满</td>
-</tr>
-<tr>
-<td style="text-align:center">BoxFit.fitWidth</td>
-<td style="text-align:center">图片可能拉伸，可能裁剪，宽度充满</td>
-</tr>
-<tr>
-<td style="text-align:center">BoxFit.scaleDown</td>
-<td style="text-align:center">效果和contain差不多， 但是只能缩小图片，不能放大图片</td>
-</tr>
-</tbody>
-</table>
-<p>也可以再加入颜色，并用colorBlendMode:BlendMode.XXX来混色。</p>
-<p>repeat：ImageRepeat设置图片重复填充的方式。</p>
-<h2 id="4-ListView控件"><a href="#4-ListView控件" class="headerlink" title="4.ListView控件"></a>4.ListView控件</h2><p>new一个ListView列表控件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body:new ListView(</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">        new ListTile(</span><br><span class="line">            leading:new Icon(Icons.XXX),</span><br><span class="line">            title:new Text(&apos;XXX&apos;)</span><br><span class="line">        )</span><br><span class="line">        ......</span><br><span class="line">    ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>作为列表项的组件也可以不是icon，而是图片，就要用到image了。</p>
-<p>横向列表：</p>
-<p>在listview中scrollDirection: Axis.horizontal，代表横向列表。然后每个列表部件只设置宽度，可以左右拉动。如果是纵向列表，那就是Axis.vertical，每个部件设置高度，可以下拉。</p>
-
-          
+          <h1 id="Flutter基本结构"><a href="#Flutter基本结构" class="headerlink" title="Flutter基本结构"></a>Flutter基本结构</h1><p>以一个helloworld程序展示一个flutter应用的基本结构。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/03/FlutterNote1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

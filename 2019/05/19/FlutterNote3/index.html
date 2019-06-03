@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Flutter导航父子级导航页面的跳转因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。 对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。 另一个页面作为子页面，返回只要用到一个按钮的pop即可，不过左上角也有箭头返回。123456789101112131415161">
+<meta name="description" content="Flutter导航父子级导航页面的跳转因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。 对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。">
 <meta name="keywords" content="Flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FlutterNote3">
 <meta property="og:url" content="apr.zuccpc.xin/2019/05/19/FlutterNote3/index.html">
 <meta property="og:site_name" content="Nero">
-<meta property="og:description" content="Flutter导航父子级导航页面的跳转因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。 对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。 另一个页面作为子页面，返回只要用到一个按钮的pop即可，不过左上角也有箭头返回。123456789101112131415161">
+<meta property="og:description" content="Flutter导航父子级导航页面的跳转因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。 对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-19T06:36:27.022Z">
+<meta property="og:updated_time" content="2019-06-03T12:59:54.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FlutterNote3">
-<meta name="twitter:description" content="Flutter导航父子级导航页面的跳转因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。 对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。 另一个页面作为子页面，返回只要用到一个按钮的pop即可，不过左上角也有箭头返回。123456789101112131415161">
+<meta name="twitter:description" content="Flutter导航父子级导航页面的跳转因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。 对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。">
 
 
 
@@ -379,7 +379,7 @@
 
       
         <h1 id="Flutter导航"><a href="#Flutter导航" class="headerlink" title="Flutter导航"></a>Flutter导航</h1><h2 id="父子级导航页面的跳转"><a href="#父子级导航页面的跳转" class="headerlink" title="父子级导航页面的跳转"></a>父子级导航页面的跳转</h2><p>因为app中包含不止一个界面，void main()后面不能用箭头函数，需要设定首页。</p>
-<p>对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。</p>
+<p>对于每个页面，用class分别定义，页面作为home，return的是Scaffold类，当然也可以是其他。在按钮上添加跳转到另一个页面的功能。<br><a id="more"></a></p>
 <p>另一个页面作为子页面，返回只要用到一个按钮的pop即可，不过左上角也有箭头返回。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">  runApp(MaterialApp(</span><br><span class="line">    title:<span class="string">"nav"</span>,</span><br><span class="line">    home:FirstScreen()</span><br><span class="line">  ));</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FirstScreen</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span></span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold( <span class="comment">//FirstScreen作为home中的页面，其类型是Scaffold</span></span><br><span class="line">                      <span class="comment">// 于是直接return一个</span></span><br><span class="line">      appBar: AppBar(title: Text(<span class="string">'导航页面'</span>),),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: RaisedButton(</span><br><span class="line">          child: Text(<span class="string">'点击查看'</span>),</span><br><span class="line">          onPressed: ()&#123;</span><br><span class="line">            Navigator.push(context, MaterialPageRoute(</span><br><span class="line">                builder:(context)=&gt;SecondScreen()</span><br><span class="line">            ));</span><br><span class="line">          &#125;</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SecondScreen</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span></span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(<span class="string">'srj'</span>),),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: RaisedButton(</span><br><span class="line">            child: Text(<span class="string">'返回'</span>),</span><br><span class="line">            onPressed:()&#123;</span><br><span class="line">              Navigator.pop(context);</span><br><span class="line">            &#125;</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这是一个基本的父子级界面的跳转。</p>
 <p>## </p>
@@ -507,7 +507,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -529,7 +529,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

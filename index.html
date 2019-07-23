@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="notenough.top/2019/06/03/VueNote2/">
+    <link itemprop="mainEntityOfPage" href="notenough.top/2019/07/23/ssr/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Webber">
@@ -292,7 +292,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/03/VueNote2/" itemprop="url">VueNote2</a></h1>
+                <a class="post-title-link" href="/2019/07/23/ssr/" itemprop="url">ShadowSocksR翻墙</a></h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-03T18:59:16+08:00">
-                2019-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-23T12:35:01+08:00">
+                2019-07-23
               </time>
             
 
@@ -328,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/solution/" itemprop="url" rel="index">
+                    <span itemprop="name">solution</span>
                   </a>
                 </span>
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/03/VueNote2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/03/VueNote2/" itemprop="commentCount"></span>
+                <a href="/2019/07/23/ssr/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/23/ssr/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,175 +376,28 @@
 
       
         
-          <h1 id="Vue实例——购物车"><a href="#Vue实例——购物车" class="headerlink" title="Vue实例——购物车"></a>Vue实例——购物车</h1><p>之前照书上题目打得一个例子，模拟一个购物车，要求选中商品再计算总价。</p>
-<p>1.对于每个条目，给其list对象中加入一条chose：false 表示其初始状态是非选中的，然后再html中该条目的checkbox中用v-model绑定该条目的chose值。当其checkbox选中后会将chose值变为真。首先实现了一个数据绑定。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/03/VueNote2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-			
-    
-		
-			
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="notenough.top/2019/05/27/vuenote/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Webber">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nero">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/27/vuenote/" itemprop="url">VueNote1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T21:58:46+08:00">
-                2019-05-27
-              </time>
-            
-
-            
-
-            
-          </span>
+          
+            <p>之前有试过购买国外主机来翻墙，当时照着一篇博客做的，觉得也没必要记下来。最近又想翻墙了，自己的主机又早崩了，人家的博客还被封了，想来自己还是有必要记录一下如何翻墙。</p>
+<h2 id="注册Vultr账号"><a href="#注册Vultr账号" class="headerlink" title="注册Vultr账号"></a>注册Vultr账号</h2><p>vultr是一个用于购买国外主机的网站，注册账号这类操作就不必多说了。虽然都说新注册的用户有优惠，但我还是没享受到，也不知为什么可能现在活动过期了。</p>
+<h2 id="购买主机"><a href="#购买主机" class="headerlink" title="购买主机"></a>购买主机</h2><p>vultr账号购买主机支持微信和支付宝支付。一般购买10刀就是69元。然后就可以去deploy一个主机，这里选用云服务器就行，区域的话我一般选择日本。</p>
+<p><img src="/23/ssr/1.png" alt=""></p>
+<p>主机类型选择centos就行，服务器大小么，只是翻墙上上网，第一个绝对够用的，标注的是$5每月，而这个服务器实际上你开着才给你算钱，如果真要精打细算的话可以要用的时候再启动主机，不用了就关闭。</p>
+<p><img src="/23/ssr/2.png" alt=""></p>
+<p>到这里已经可以部署了，后面的选项不是很懂，应该暂时用不到，就没勾。</p>
+<p>部署完毕后可以看到自己的主机处于Running状态，正在运行，以及它的一些信息。</p>
+<p><img src="/23/ssr/3.png" alt=""></p>
+<h2 id="设置ssr"><a href="#设置ssr" class="headerlink" title="设置ssr"></a>设置ssr</h2><p>这里要用到XShell，用于连接主机。直接百度在官网下，选择学生版即可免费下载使用。当然还有其他方法，一开始照教程用的是xshell我便沿用了这个工具。</p>
+<p>1.新建一个会话，主机部分填入你购买的服务器的IP地址。</p>
+<p>2.新建完成后双击进行主机的连接，如果这时跳出SSH证书的弹窗，给你接收并保存这个按钮选项，就说明这台主机是可以用的，就点这个接收并保存，然后输入用户名和密码（上图所给，复制即可）就连接成功了。如果没有弹出，就说明这个IP被墙了。简而言之就是不能用的，那么就返回前面的步骤再买主机吧。好在买了不用是不会花钱的，顶多花个$0.01，损失也不大。现在被墙的挺多的，可以一次买五台甚至十台去试，虽然有点麻烦，但总能试到一台可以用的。</p>
+<p>3.连接成功后就到了命令窗口，复制下列命令进窗口（要右击粘贴，ctrl+v是没用的），然后回车。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line"></span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line"></span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure></p>
+<p>4.接下来就是设置ShadowSocksR的参数了，根据它的指示来做就行了。输入密码，输入端口，协议、混淆参数、加密方式这些东西，其实默认就可以了，一直按回车吧。</p>
+<p><img src="/23/ssr/4.png" alt=""></p>
+<p>成功后如上图显示。</p>
+<h2 id="设定SSR客户端"><a href="#设定SSR客户端" class="headerlink" title="设定SSR客户端"></a>设定SSR客户端</h2><p>SSR小飞机的客户端在github上下载，<a href="https://github.com/shadowsocksr-rm/shadowsocksr-csharp/releases" target="_blank" rel="noopener">下载地址</a>，当然也可以自行下载一个合适的。</p>
+<p>win8以上基本用dotnet4.0版本，双击就在右下角通知栏启动了，点开编辑界面，根据上图填入参数，然后确定。此时要注意到右下角的小飞机是粉红色的，这时系统代理模式是直连模式，还不能翻墙成功，改成全局模式才行。至此就可以上外网了！</p>
+<p><strong>要注意的一个问题，不用时记得改回直连模式，如果直接关机可能造成下次开机连百度都上不去，代理模式的问题，代理被改掉了，出现这种情况，我暂时只有求靠360断网急救箱的解决方案了</strong></p>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-			
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/27/vuenote/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/27/vuenote/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="VueNote"><a href="#VueNote" class="headerlink" title="VueNote"></a>VueNote</h1><p>每个vue应用都需要实例化vue</p>
-<p>对于html中id为app的元素，对其实例化。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/27/vuenote/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -2185,6 +2038,168 @@
 
 			
     
+		
+			
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="notenough.top/2019/01/04/htmlnote1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Webber">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/04/htmlnote1/" itemprop="url">html超文本标记语言笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T10:44:21+08:00">
+                2019-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+			
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/04/htmlnote1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/04/htmlnote1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="html超文本标记语言笔记（一）"><a href="#html超文本标记语言笔记（一）" class="headerlink" title="html超文本标记语言笔记（一）"></a>html超文本标记语言笔记（一）</h1><h2 id="一、html常用标签"><a href="#一、html常用标签" class="headerlink" title="一、html常用标签"></a>一、html常用标签</h2><p><code>&lt;html&gt; --网页开始 最后要有结束标签 &lt;/html&gt;</code></p>
+<p><strong>结束标签一定不能忘了</strong></p>
+<p><code>&lt;head&gt;</code> –网页头标签，里面可以加title标签修改网页的title，也可以用<code>&lt;meta charset=&quot;utf-8&quot;&gt;&lt;/meta&gt;</code>定义网页解码使用的码表。</p>
+<p><code>&lt;body&gt; --网页主体 &lt;/body&gt;</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/04/htmlnote1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+			
+    
   </section>
 
   
@@ -2237,7 +2252,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

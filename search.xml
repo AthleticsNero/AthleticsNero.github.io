@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ubuntu安装卡死及关机卡死解决方法</title>
+      <link href="/2019/08/12/ubuntu2/"/>
+      <url>/2019/08/12/ubuntu2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Ubuntu安装界面卡住"><a href="#Ubuntu安装界面卡住" class="headerlink" title="Ubuntu安装界面卡住"></a>Ubuntu安装界面卡住</h2><p>给笔记本安装ubuntu的时候一直有这个问题，在安装界面就直接卡死，鼠标能动，但啥都不能点。</p><p>实际上是由于我的显卡是GTX1060，是在1050ti以上，而ubuntu与n卡的高版本兼容性不好才导致卡死。</p><p>这时候的处理方法是：</p><p>1.在系统选择安装ubuntu界面，选到install ubuntu，但不要按enter键进入，而是按E。</p><p>2.这时候进入一个界面，找到quiet splash后面的“—”，把它删除，并改成“nomodeset”，然后按F10启动，按正常步骤安装ubuntu。</p><p>3.安装完成后它会提示要重启电脑，这次选择ubuntu，还是按E进入一个编辑界面，找到splash那一行，把它后面的删除即可（仅该行），再按F10启动。</p><h2 id="Ubuntu关机卡死"><a href="#Ubuntu关机卡死" class="headerlink" title="Ubuntu关机卡死"></a>Ubuntu关机卡死</h2><p>一按关机就全屏卡死，这个问题的原因还是因为显卡版本高了（据说19.04版本没这个问题）</p><p>解决办法：</p><p>1.进入ubuntu，点开软件和更新，打开ubuntu软件，找到下载自，后面选择aliyun的源。然后点退出，这时候它会要求你下载相应的包之类的，下载就好。</p><p>2.下载完后回到前面的界面，点击附加驱动，加载完成后，选择来自NVIDIA的驱动，作为专用驱动，然后点击应用更改就好了。</p><hr><p>今天大费周章才安装上双系统，有点笨，好在最后搞好了也没必要再重新配windows的环境。</p><p>原来的固态250g，只用作win10，现在用一块480g的固态，一半做ubuntu，另一半打算沿用之前的系统。不巧的是，我电脑只有一个固态位。虽然重装系统会很简单，但一个全新的系统要做的事就很多了。</p><p>最后我做的是，用wepe的CFI备份还原工具，先复制我的固态整个磁盘到一个镜像文件，然后换另一块固态，再还原到新固态上，<strong>还原是覆盖还原，会先格式化新固态上。按理说新固态是空的不影响，我当时却事先安装了ubuntu，于是重复了第二遍安装</strong></p><p>还原之后会发现启动不了，电脑会蓝屏报错，这是引导的问题。</p><p>还是用wepe工具，里面有个UEFI引导修复，由disk genuines工具可看到系统盘的ESP分区的盘符，在这里就选择这个盘符，系统根目录选择C：windows（盘符根据实际情况来，我当时还原在了M），然后修复引导就行了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> solution </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ubuntu linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ShadowSocksR翻墙</title>
       <link href="/2019/07/23/ssr/"/>
       <url>/2019/07/23/ssr/</url>

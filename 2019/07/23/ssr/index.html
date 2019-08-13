@@ -91,12 +91,12 @@
 <meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/2.png?raw=true">
 <meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/3.png?raw=true">
 <meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/4.png?raw=true">
-<meta property="og:image" content="/23/ssr/5.png">
-<meta property="og:image" content="/23/ssr/6.png">
-<meta property="og:image" content="/23/ssr/7.png">
-<meta property="og:image" content="/23/ssr/8.png">
-<meta property="og:image" content="/23/ssr/9.png">
-<meta property="og:updated_time" content="2019-08-13T06:19:20.996Z">
+<meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/5.png?raw=true">
+<meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/6.png?raw=true">
+<meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/7.png?raw=true">
+<meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/8.png?raw=true">
+<meta property="og:image" content="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/9.png?raw=true">
+<meta property="og:updated_time" content="2019-08-13T06:26:00.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShadowSocksR翻墙">
 <meta name="twitter:description" content="之前有试过购买国外主机来翻墙，当时照着一篇博客做的，觉得也没必要记下来。最近又想翻墙了，自己的主机又早崩了，人家的博客还被封了，想来自己还是有必要记录一下如何翻墙。 注册Vultr账号vultr是一个用于购买国外主机的网站，注册账号这类操作就不必多说了。虽然都说新注册的用户有优惠，但我还是没享受到，也不知为什么可能现在活动过期了。">
@@ -442,17 +442,17 @@
 <hr>
 <p>此时，上外网发现仍不能连接成功。据说是代理的问题，要用socks5协议的代理。</p>
 <h3 id="下载与安装SwitchyOmega"><a href="#下载与安装SwitchyOmega" class="headerlink" title="下载与安装SwitchyOmega"></a>下载与安装SwitchyOmega</h3><p>这个插件可以在github上下载。<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">下载地址</a></p>
-<p><img src="/23/ssr/5.png" alt=""></p>
+<p><img src="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/5.png?raw=true" alt=""></p>
 <p>我下载了这个版本的crx插件。下载完后按理说丢进chrome扩展程序就行了。</p>
 <p>然而报错说不能使用这个crx，我就把crx做成压缩文件，再解压出来，变成了一个文件夹，丢进去就行了。</p>
 <h3 id="配置SwitchyOmega"><a href="#配置SwitchyOmega" class="headerlink" title="配置SwitchyOmega"></a>配置SwitchyOmega</h3><p>点击插件进入配置页面</p>
-<p><img src="/23/ssr/6.png" alt=""></p>
+<p><img src="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/6.png?raw=true" alt=""></p>
 <p>点击新建情景模式，模式名称随便，但后面得用上</p>
 <p>模式的配置如下</p>
-<p><img src="/23/ssr/7.png" alt=""></p>
+<p><img src="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/7.png?raw=true" alt=""></p>
 <h3 id="设置Auto-Switch"><a href="#设置Auto-Switch" class="headerlink" title="设置Auto Switch"></a>设置Auto Switch</h3><p>点击左侧的auto switch进入自动切换的配置界面，在切换规则那里点击编写源代码，源码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[SwitchyOmega Conditions]</span><br><span class="line">@with result</span><br><span class="line">raw.githubusercontent.com +xxx    //xxx是你在第一步新建模式的名字</span><br><span class="line">* +direct</span><br></pre></td></tr></table></figure></p>
-<p>源代码编辑完后，再点下这个编辑源代码，进入规则配置界面。情景模式都选用第一步我们配置的情景模式，再设置规则列表设置，选AutoProxy，规则列表网址填入 <a href="https://raw.githubusercontent.com/xxx/xxx/master/xxx.txt(下图未填入，xxx自行替换)，最后点击下面的立即更新情景模式。" target="_blank" rel="noopener">https://raw.githubusercontent.com/xxx/xxx/master/xxx.txt(下图未填入，xxx自行替换)，最后点击下面的立即更新情景模式。</a><br><img src="/23/ssr/8.png" alt=""></p>
-<p>最后一步配置完后，点击浏览器右上角该插件小图标，选择auto switch即可科学上网。<br><img src="/23/ssr/9.png" alt=""></p>
+<p>源代码编辑完后，再点下这个编辑源代码，进入规则配置界面。情景模式都选用第一步我们配置的情景模式，再设置规则列表设置，选AutoProxy，规则列表网址填入 <a href="https://raw.githubusercontent.com/xxx/xxx/master/xxx.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/xxx/xxx/master/xxx.txt</a><br>(下图未填入，xxx自行替换)，最后点击下面的立即更新情景模式。<br><img src="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/8.png?raw=true" alt=""></p>
+<p>最后一步配置完后，点击浏览器右上角该插件小图标，选择auto switch即可科学上网。<br><img src="https://github.com/AthleticsNero/AthleticsNero.github.io/blob/master/2019/07/23/ssr/9.png?raw=true" alt=""></p>
 <p><strong>进入外网，但发现加载很慢时，注意小图标上有数字，点击将他们全部加入规则即可</strong></p>
 <hr>
 <p>当时我要连入外网的目的就在于同步书签，需要登陆谷歌账号，但是告诉我无法同步，request canceled。事实上问题出在谷歌同步页面没有添加规则，这个时候需要自己手动添加。</p>

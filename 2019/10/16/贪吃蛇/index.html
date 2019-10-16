@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Flutter,Arduino,ESP32,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="For My Battle Symphony!">
+<meta name="description" content="基于Arduino与灯带的贪吃蛇游戏大一定下的的创客项目以及Dev Feast活动上展示内容，主要技术栈在短学期已搞定，关键在于贪吃蛇游戏的实现。 项目地址：https://github.com/SRayJay/snake 一、项目简介本项目开发一个运行在ESP32上，显示在WS2812灯板上并收flutterAPP控制的贪吃蛇游戏。 二、项目准备所需的材料：ESP32一个，22*22的WS281">
+<meta name="keywords" content="Flutter,Arduino,ESP32">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贪吃蛇">
 <meta property="og:url" content="notenough.top/2019/10/16/贪吃蛇/index.html">
 <meta property="og:site_name" content="RayJay">
-<meta property="og:description" content="For My Battle Symphony!">
+<meta property="og:description" content="基于Arduino与灯带的贪吃蛇游戏大一定下的的创客项目以及Dev Feast活动上展示内容，主要技术栈在短学期已搞定，关键在于贪吃蛇游戏的实现。 项目地址：https://github.com/SRayJay/snake 一、项目简介本项目开发一个运行在ESP32上，显示在WS2812灯板上并收flutterAPP控制的贪吃蛇游戏。 二、项目准备所需的材料：ESP32一个，22*22的WS281">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-16T08:05:32.343Z">
+<meta property="og:updated_time" content="2019-10-16T08:34:02.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪吃蛇">
-<meta name="twitter:description" content="For My Battle Symphony!">
+<meta name="twitter:description" content="基于Arduino与灯带的贪吃蛇游戏大一定下的的创客项目以及Dev Feast活动上展示内容，主要技术栈在短学期已搞定，关键在于贪吃蛇游戏的实现。 项目地址：https://github.com/SRayJay/snake 一、项目简介本项目开发一个运行在ESP32上，显示在WS2812灯板上并收flutterAPP控制的贪吃蛇游戏。 二、项目准备所需的材料：ESP32一个，22*22的WS281">
 
 
 
@@ -170,7 +171,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">April</p>
+        <p class="site-subtitle"></p>
       
   </div>
 
@@ -312,6 +313,29 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+			
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/project/" itemprop="url" rel="index">
+                    <span itemprop="name">project</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -354,7 +378,14 @@
       
 
       
-        
+        <h1 id="基于Arduino与灯带的贪吃蛇游戏"><a href="#基于Arduino与灯带的贪吃蛇游戏" class="headerlink" title="基于Arduino与灯带的贪吃蛇游戏"></a>基于Arduino与灯带的贪吃蛇游戏</h1><p>大一定下的的创客项目以及Dev Feast活动上展示内容，主要技术栈在短学期已搞定，关键在于贪吃蛇游戏的实现。</p>
+<p>项目地址：<a href="https://github.com/SRayJay/snake" target="_blank" rel="noopener">https://github.com/SRayJay/snake</a></p>
+<h2 id="一、项目简介"><a href="#一、项目简介" class="headerlink" title="一、项目简介"></a>一、项目简介</h2><p>本项目开发一个运行在ESP32上，显示在WS2812灯板上并收flutterAPP控制的贪吃蛇游戏。</p>
+<h2 id="二、项目准备"><a href="#二、项目准备" class="headerlink" title="二、项目准备"></a>二、项目准备</h2><p>所需的材料：ESP32一个，22*22的WS2812灯屏、电源、亚克力板</p>
+<p>所做的准备：MQTT服务器、arduino开发环境、FastLED库，flutter开发框架。</p>
+<h2 id="三、贪吃蛇基本原理应用"><a href="#三、贪吃蛇基本原理应用" class="headerlink" title="三、贪吃蛇基本原理应用"></a>三、贪吃蛇基本原理应用</h2><p>WS2812灯板走的是单总线，所以第21盏灯和第22盏灯在不同行但是位置邻近。这样的构造并不利于去写贪吃蛇的运动。于是这里加入地图数组，maps[22][22],当其为0则为空，1表示是墙体，2表示是食物，3表示是蛇身。而由地图数组转到灯带的表示，找出规律，总结一下代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;MAXLED;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((i/<span class="number">22</span>)%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">       <span class="keyword">if</span>(maps[i/<span class="number">22</span>][i%<span class="number">22</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">          leds[i] = CRGB(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(maps[i/<span class="number">22</span>][<span class="number">21</span>-i%<span class="number">22</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">        leds[i] = CRGB(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -368,6 +399,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flutter/" rel="tag"># Flutter</a>
+          
+            <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          
+            <a href="/tags/ESP32/" rel="tag"># ESP32</a>
+          
+        </div>
       
 
       
@@ -441,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -504,6 +554,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基于Arduino与灯带的贪吃蛇游戏"><span class="nav-number">1.</span> <span class="nav-text">基于Arduino与灯带的贪吃蛇游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、项目简介"><span class="nav-number">1.1.</span> <span class="nav-text">一、项目简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、项目准备"><span class="nav-number">1.2.</span> <span class="nav-text">二、项目准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、贪吃蛇基本原理应用"><span class="nav-number">1.3.</span> <span class="nav-text">三、贪吃蛇基本原理应用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

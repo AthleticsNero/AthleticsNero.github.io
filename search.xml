@@ -8,9 +8,25 @@
       <link href="/2019/10/16/%E8%B4%AA%E5%90%83%E8%9B%87/"/>
       <url>/2019/10/16/%E8%B4%AA%E5%90%83%E8%9B%87/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="基于Arduino与灯带的贪吃蛇游戏"><a href="#基于Arduino与灯带的贪吃蛇游戏" class="headerlink" title="基于Arduino与灯带的贪吃蛇游戏"></a>基于Arduino与灯带的贪吃蛇游戏</h1><p>大一定下的的创客项目以及Dev Feast活动上展示内容，主要技术栈在短学期已搞定，关键在于贪吃蛇游戏的实现。</p><p>项目地址：<a href="https://github.com/SRayJay/snake" target="_blank" rel="noopener">https://github.com/SRayJay/snake</a></p><h2 id="一、项目简介"><a href="#一、项目简介" class="headerlink" title="一、项目简介"></a>一、项目简介</h2><p>本项目开发一个运行在ESP32上，显示在WS2812灯板上并收flutterAPP控制的贪吃蛇游戏。</p><h2 id="二、项目准备"><a href="#二、项目准备" class="headerlink" title="二、项目准备"></a>二、项目准备</h2><p>所需的材料：ESP32一个，22*22的WS2812灯屏、电源、亚克力板</p><p>所做的准备：MQTT服务器、arduino开发环境、FastLED库，flutter开发框架。</p><h2 id="三、贪吃蛇基本原理应用"><a href="#三、贪吃蛇基本原理应用" class="headerlink" title="三、贪吃蛇基本原理应用"></a>三、贪吃蛇基本原理应用</h2><p>WS2812灯板走的是单总线，所以第21盏灯和第22盏灯在不同行但是位置邻近。这样的构造并不利于去写贪吃蛇的运动。于是这里加入地图数组，maps[22][22],当其为0则为空，1表示是墙体，2表示是食物，3表示是蛇身。而由地图数组转到灯带的表示，找出规律，总结一下代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;MAXLED;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((i/<span class="number">22</span>)%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">       <span class="keyword">if</span>(maps[i/<span class="number">22</span>][i%<span class="number">22</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">          leds[i] = CRGB(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(maps[i/<span class="number">22</span>][<span class="number">21</span>-i%<span class="number">22</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">        leds[i] = CRGB(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+            <tag> Arduino </tag>
+            
+            <tag> ESP32 </tag>
+            
+        </tags>
       
     </entry>
     

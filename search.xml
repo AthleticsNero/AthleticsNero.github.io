@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>贪吃蛇</title>
+      <link href="/2019/10/16/%E8%B4%AA%E5%90%83%E8%9B%87/"/>
+      <url>/2019/10/16/%E8%B4%AA%E5%90%83%E8%9B%87/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node.js笔记(一)</title>
       <link href="/2019/10/02/nodejs%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
       <url>/2019/10/02/nodejs%E7%AC%94%E8%AE%B0%E4%B8%80/</url>
@@ -88,7 +101,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> project </category>
           
       </categories>
       
@@ -99,11 +112,11 @@
             
             <tag> html </tag>
             
-            <tag> arduino </tag>
+            <tag> Arduino </tag>
             
             <tag> javascript </tag>
             
-            <tag> esp32 </tag>
+            <tag> ESP32 </tag>
             
         </tags>
       

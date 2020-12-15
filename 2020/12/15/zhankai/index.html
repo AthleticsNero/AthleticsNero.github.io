@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。 html部分：–展开–  首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数） css部分：123456789101112131415161718192021.book_intro_conten">
+<meta name="description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="展开按钮总结">
 <meta property="og:url" content="notenough.top/2020/12/15/zhankai/index.html">
 <meta property="og:site_name" content="RayJay">
-<meta property="og:description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。 html部分：–展开–  首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数） css部分：123456789101112131415161718192021.book_intro_conten">
+<meta property="og:description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-15T05:58:26.108Z">
+<meta property="og:updated_time" content="2020-12-15T06:02:33.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="展开按钮总结">
-<meta name="twitter:description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。 html部分：–展开–  首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数） css部分：123456789101112131415161718192021.book_intro_conten">
+<meta name="twitter:description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。">
 
 
 
@@ -379,8 +379,8 @@
 
       
         <h1 id="展开按钮总结"><a href="#展开按钮总结" class="headerlink" title="展开按钮总结"></a>展开按钮总结</h1><p>需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。</p>
-<h3 id="html部分："><a href="#html部分：" class="headerlink" title="html部分："></a>html部分：</h3><div ref="content_text" :class="{book_intro_content_all:!content_haveMore,book_intro_content:content_haveMore}"></div><br><div v-if="content_haveMore" class="more" @click="getMore">–展开–</div>
-
+<a id="more"></a>
+<h3 id="html部分："><a href="#html部分：" class="headerlink" title="html部分："></a>html部分：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"content_text"</span> <span class="attr">:class</span>=<span class="string">"&#123;book_intro_content_all:!content_haveMore,book_intro_content:content_haveMore&#125;"</span>&gt;</span>&#123;&#123; BookInfo.book_intro &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"content_haveMore"</span> <span class="attr">class</span>=<span class="string">"more"</span> @<span class="attr">click</span>=<span class="string">"getMore"</span>&gt;</span>--展开--<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数）</p>
 <h3 id="css部分："><a href="#css部分：" class="headerlink" title="css部分："></a>css部分：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.book_intro_content</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">635px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">-webkit-line-clamp</span>: <span class="number">10</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: left;</span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.book_intro_content_all</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">635px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: left;</span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>主要就是第一个做了个多余文本打点处理，还有固定行数，第二个就是纯自适应。</p>

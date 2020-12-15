@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="vue,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="For My Battle Symphony!">
+<meta name="description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。 html部分：–展开–  首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数） css部分：123456789101112131415161718192021.book_intro_conten">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zhankai">
 <meta property="og:url" content="notenough.top/2020/12/15/zhankai/index.html">
 <meta property="og:site_name" content="RayJay">
-<meta property="og:description" content="For My Battle Symphony!">
+<meta property="og:description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。 html部分：–展开–  首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数） css部分：123456789101112131415161718192021.book_intro_conten">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-15T05:34:28.834Z">
+<meta property="og:updated_time" content="2020-12-15T05:36:53.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zhankai">
-<meta name="twitter:description" content="For My Battle Symphony!">
+<meta name="twitter:description" content="展开按钮总结需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。 html部分：–展开–  首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数） css部分：123456789101112131415161718192021.book_intro_conten">
 
 
 
@@ -312,6 +313,29 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+			
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/solution/" itemprop="url" rel="index">
+                    <span itemprop="name">solution</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -354,7 +378,17 @@
       
 
       
-        
+        <h1 id="展开按钮总结"><a href="#展开按钮总结" class="headerlink" title="展开按钮总结"></a>展开按钮总结</h1><p>需求：一段文本，不定长，需要在页面中有展开按钮，假如它少于固定行，展示按钮不可见，假如多于固定行，则出现按钮，点击后，显示全部长度。</p>
+<h3 id="html部分："><a href="#html部分：" class="headerlink" title="html部分："></a>html部分：</h3><div ref="content_text" :class="{book_intro_content_all:!content_haveMore,book_intro_content:content_haveMore}"></div><br><div v-if="content_haveMore" class="more" @click="getMore">–展开–</div>
+
+<p>首先定义两个样式类，一个是展开后高度自适应的情况，一个是未展开的固定行数（少于还是自适应大小，多于就是固定行数）</p>
+<h3 id="css部分："><a href="#css部分：" class="headerlink" title="css部分："></a>css部分：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.book_intro_content</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">635px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">-webkit-line-clamp</span>: <span class="number">10</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: left;</span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.book_intro_content_all</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">635px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: left;</span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>主要就是第一个做了个多余文本打点处理，还有固定行数，第二个就是纯自适应。</p>
+<h3 id="js部分："><a href="#js部分：" class="headerlink" title="js部分："></a>js部分：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">data:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		content_haveMore: <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line">created:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.change_content_haveMore()</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">	change_content_haveMore: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'高度'</span> + <span class="keyword">this</span>.$refs.content_text.offsetHeight)</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.$refs.content_text.offsetHeight &gt; <span class="number">190</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.content_haveMore = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.content_haveMore)</span><br><span class="line">        <span class="keyword">this</span>.content_haveMore = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getMore: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.content_haveMore = !<span class="keyword">this</span>.content_haveMore</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'高度'</span> + <span class="keyword">this</span>.$refs.content_text.offsetHeight)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结一下要点和坑"><a href="#总结一下要点和坑" class="headerlink" title="总结一下要点和坑"></a>总结一下要点和坑</h3><p><strong>踩得一个坑</strong>： 调用this.$refs.content_text 需要得到DOM树结构，而此前我希望通过v-if=init_content_haveMore，即判断将出现的文本能否放在190px的高度内才决定是否渲染展开这个按钮。</p>
+<p>这样犯了逻辑矛盾，报错找不到这个ref指向的dom元素的offsetHeight，所以只能等文本框实际渲染后才能操作$refs上的dom节点。</p>
+<p>这边我初始化content_havemore是个true值，默认渲染展开，但是要求刚生成完就判断展开按钮应不应该出现，这里在created函数里使用了this.$nextTick(callback)函数，它的作用是在dom树生成完毕后执行代码，因为vue的计算属性不允许修改data内数据，所以我将change_content_haveMore写在methods里面，直接this.XXX执行即可。</p>
+
       
     </div>
     
@@ -368,6 +402,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+        </div>
       
 
       
@@ -441,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -481,7 +530,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -504,6 +553,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#展开按钮总结"><span class="nav-number">1.</span> <span class="nav-text">展开按钮总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html部分："><span class="nav-number">1.0.1.</span> <span class="nav-text">html部分：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css部分："><span class="nav-number">1.0.2.</span> <span class="nav-text">css部分：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js部分："><span class="nav-number">1.0.3.</span> <span class="nav-text">js部分：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一下要点和坑"><span class="nav-number">1.0.4.</span> <span class="nav-text">总结一下要点和坑</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

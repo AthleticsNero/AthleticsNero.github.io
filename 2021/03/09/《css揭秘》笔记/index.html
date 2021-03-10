@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用vw作单位。vh则是窗口高度的1%。">
+<meta name="description" content="粗读了《css揭秘》这本书，里面提到的很多技巧和操作暂时用不到，可以在用到时当工具书看，目前对我有帮助的几个技巧做了个笔记。  尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用v">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《css揭秘》笔记">
 <meta property="og:url" content="notenough.top/2021/03/09/《css揭秘》笔记/index.html">
 <meta property="og:site_name" content="RayJay">
-<meta property="og:description" content="尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用vw作单位。vh则是窗口高度的1%。">
+<meta property="og:description" content="粗读了《css揭秘》这本书，里面提到的很多技巧和操作暂时用不到，可以在用到时当工具书看，目前对我有帮助的几个技巧做了个笔记。  尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-10T03:11:43.624Z">
+<meta property="og:updated_time" content="2021-03-10T05:57:25.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《css揭秘》笔记">
-<meta name="twitter:description" content="尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用vw作单位。vh则是窗口高度的1%。">
+<meta name="twitter:description" content="粗读了《css揭秘》这本书，里面提到的很多技巧和操作暂时用不到，可以在用到时当工具书看，目前对我有帮助的几个技巧做了个笔记。  尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用v">
 
 
 
@@ -378,12 +378,13 @@
       
 
       
-        <ol>
+        <p>粗读了《css揭秘》这本书，里面提到的很多技巧和操作暂时用不到，可以在用到时当工具书看，目前对我有帮助的几个技巧做了个笔记。</p>
+<ol>
 <li><p>尽量使用相对单位。line-height与font-size的比例而不要使用绝对值。em单位（相对于当前元素的字体大小）可以在修改字体尺寸同时修改其他的数值。rem则是根据根元素的字体大小。vw单位是窗口宽度的1%，因此需要某个元素在浏览器窗口改变时保持一定的比例，就用vw作单位。vh则是窗口高度的1%。</p>
 <a id="more"></a>
 </li>
 <li><p>要做定义类型的表示，如“作者：XXX”,可以用更加语义化的标签，dl，dt，dd。三者都是块元素，需要dt和dd在同一行的话得转换成行内元素。而在第二个dt出现前，需要给前一个dd加上一个换行符，采用伪元素的方式添加换行符，而dd若需要两条内容，可以同样的方法在其之间添上’，‘</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="selector-tag">dt</span>,<span class="selector-tag">dd</span>&#123;<span class="attribute">display</span>:inline;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">dd</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">dd</span>+<span class="selector-tag">dt</span><span class="selector-pseudo">::before</span>&#123;<span class="attribute">content</span>:<span class="string">'\A'</span>;<span class="attribute">white-space</span>:pre;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">dd</span>+<span class="selector-tag">dd</span><span class="selector-pseudo">::before</span>&#123;<span class="attribute">content</span>:<span class="string">','</span>&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>物种：<span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>人<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>生日：<span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>3.9<span class="tag">&lt;/<span class="name">dd</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>3.8<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">dt,dd&#123;display:inline;&#125;</span></span><br><span class="line"><span class="undefined">dd&#123;margin:0;&#125;</span></span><br><span class="line"><span class="undefined">dd+dt::before&#123;content:'\A';white-space:pre;&#125;</span></span><br><span class="line"><span class="undefined">dd+dd::before&#123;content:','&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>物种：<span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>人<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>生日：<span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>3.9<span class="tag">&lt;/<span class="name">dd</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>3.8<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li><p>需要实现矩形有切角，可以用background：linear-gradient(-45deg,transparent 25px,#58a 0);其中25px是切角的大小，#58a是背景颜色。</p>
 </li>

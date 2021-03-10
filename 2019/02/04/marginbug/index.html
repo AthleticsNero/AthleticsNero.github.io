@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="RayJay">
 <meta property="og:description" content="Margin塌陷123&amp;lt;div class=&amp;quot;wrap&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-30T13:18:01.809Z">
+<meta property="og:updated_time" content="2021-03-10T09:03:37.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="margin塌陷和合并">
 <meta name="twitter:description" content="Margin塌陷123&amp;lt;div class=&amp;quot;wrap&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;">
@@ -392,6 +392,7 @@
 <p><strong>1、3两种方法内部都会自动将display改为inline-block</strong></p>
 <h2 id="Margin合并"><a href="#Margin合并" class="headerlink" title="Margin合并"></a>Margin合并</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;demo1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;demo2&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>在这两个兄弟级块级元素的css定义中，其垂直margin是会合并的，比如第一个下方margin200，第二个上方margin100，最终结果是只有200的margin，若要解决这个问题，只需把第一个的margin改成300就行了。</p>
+<p>或者在两个margin之间加上border或者padding也可以防止折叠。</p>
 
       
     </div>

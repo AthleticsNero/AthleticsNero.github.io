@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="RayJay">
 <meta property="og:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。  使用简写属性的时候会默认给细化的属性赋默认值，如标签h1的样式font：32px arial;默认覆盖掉原本h1的加粗字体效果。   第二章：相对单位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-10T08:00:04.565Z">
+<meta property="og:updated_time" content="2021-03-10T08:47:44.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《深入解析css》笔记">
 <meta name="twitter:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。  使用简写属性的时候会默认给细化的属性赋默认值，如标签h1的样式font：32px arial;默认覆盖掉原本h1的加粗字体效果。   第二章：相对单位">
@@ -410,6 +410,18 @@
 <h3 id="第三章：盒模型"><a href="#第三章：盒模型" class="headerlink" title="第三章：盒模型"></a>第三章：盒模型</h3><ol>
 <li><p>调整盒模型：当一块宽度占70%，而第二块带一点padding的占30%时，他们是无法容下在一行的，因为默认采用的box-sizing是content-box，这意味着给的宽是内容的宽而不包括边距和边框，所以为了方便，建议在css表头定义</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>:border-box;</span><br><span class="line">&#125;</span><br><span class="line">*,<span class="selector-pseudo">::before</span>,<span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>:inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现等高列：外层display:flex就行，别搞table。</p>
+<blockquote>
+<p>警告：除非别无选择，否则不要明确设置元素的高度。高度应该由内容决定。</p>
+</blockquote>
+</li>
+<li><p>vertical-align只会对行内元素或者table-cell生效。对于行内元素，它控制着该元素跟同一行内其他元素之间的对齐关系。比如，可以用它控制一个行内的图片跟相邻的文字对齐。</p>
+</li>
+<li><p>外边距折叠：相邻外边距会折叠，折叠外边距的大小等于其较大值。即使是多个外边距叠加也只会取其中最大值。</p>
+<blockquote>
+<p>只有上下外边距才会折叠，左右并不好折叠。</p>
+</blockquote>
 </li>
 </ol>
 

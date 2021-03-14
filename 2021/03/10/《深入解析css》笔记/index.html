@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="RayJay">
 <meta property="og:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/10/《深入解析css》笔记/Hexo/source/_posts/《深入解析css》笔记/菜单.png">
-<meta property="og:updated_time" content="2021-03-14T04:29:01.358Z">
+<meta property="og:image" content="/10/《深入解析css》笔记/菜单.png">
+<meta property="og:updated_time" content="2021-03-14T04:31:34.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《深入解析css》笔记">
 <meta name="twitter:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。">
-<meta name="twitter:image" content="/10/《深入解析css》笔记/Hexo/source/_posts/《深入解析css》笔记/菜单.png">
+<meta name="twitter:image" content="/10/《深入解析css》笔记/菜单.png">
 
 
 
@@ -394,12 +394,12 @@
 <h3 id="第二章：相对单位"><a href="#第二章：相对单位" class="headerlink" title="第二章：相对单位"></a>第二章：相对单位</h3><ol>
 <li>em用在边距及元素大小上很好，但用在font-size上很复杂，可以用rem，根据祖先元素来换算得到字体大小。</li>
 <li>用rem设置字号，用px设置边框，用em设置其他大部分属性值。</li>
-<li><strong>停止像素思维</strong>：给网页设置一个合理的默认字号作为rem。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">   <span class="attribute">font-size</span>:<span class="number">0.875em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>停止像素思维</strong>：给网页设置一个合理的默认字号作为rem。 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">   <span class="attribute">font-size</span>:<span class="number">0.875em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>​    大部分网页默认字号16px，这里换算的话设置的根字号就是14px了，后续只需要根据14px去换算用em做单位，原则就是少换算，多靠相对单位去感觉。<br>​    构造响应式面板：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">0.75em</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">800px</span>)&#123;</span><br><span class="line">	<span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">0.875em</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">	<span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">1em</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
+<pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">0.75em</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">800px</span>)&#123;</span><br><span class="line">    <span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">        <span class="attribute">font-size</span>:<span class="number">0.875em</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">    <span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">        <span class="attribute">font-size</span>:<span class="number">1em</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
 <p>媒体查询，即@media规则，可以根据某种屏幕尺寸或者媒体类型下的样式。这是响应式设计的关键部分。</p>
 </blockquote>
 <p>​    通过给不同大小的媒体设置不同的字号，响应的重新定义了整个网页的em和rem。</p>
@@ -461,7 +461,7 @@
 </ol>
 <h3 id="第五章：Flexbox"><a href="#第五章：Flexbox" class="headerlink" title="第五章：Flexbox"></a>第五章：Flexbox</h3><ol>
 <li><p>如何实现如下顶部菜单栏布局？</p>
-<p><img src="/10/《深入解析css》笔记/Hexo\source\_posts\《深入解析css》笔记\菜单.png" alt="菜单"></p>
+<p><img src="/10/《深入解析css》笔记/菜单.png" alt="菜单"></p>
 <p>用ul和li做元素，给ul设定flex布局，要把其中某几项推到右边，只需要在开始的那一项给上margin-left:auto；他就会自动分配所有的空间给margin-left；</p>
 </li>
 <li><p>flex属性：flex属性是个简写属性，具体是flex-grow，flex-shrink(默认1)，flex-basis(默认0%)。</p>

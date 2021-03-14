@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="RayJay">
 <meta property="og:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-10T14:43:40.107Z">
+<meta property="og:image" content="/10/《深入解析css》笔记/Hexo/source/_posts/《深入解析css》笔记/菜单.png">
+<meta property="og:updated_time" content="2021-03-14T04:29:01.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《深入解析css》笔记">
 <meta name="twitter:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。">
+<meta name="twitter:image" content="/10/《深入解析css》笔记/Hexo/source/_posts/《深入解析css》笔记/菜单.png">
 
 
 
@@ -439,8 +441,48 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.media</span><span class="selector-pseudo">:nth-child(odd)</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>:left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当然，这种情况需要确定一行排列多少元素。如果不知道要多少个，最好用别的方案，比如flexbox或inline-block。</p>
 </li>
+<li><p>BFC(块级格式化上下文)，粗略理解就是给元素建立一个块级容器，使其不受外部浮动元素的影响。将内部的内容与外部的上下文隔离开，这种隔离为创建BFC的元素做出了下面三件事情：</p>
+<p>(1) 包含了内部所有元素的上下外边距。它们不会跟BFC外面的元素产生外边距折叠。</p>
+<p>(2) 包含了内部所有的浮动元素。</p>
+<p>(3) 不会跟BFC外面的浮动元素重叠。</p>
+<p>建立BFC的常用方法：</p>
+<ul>
+<li><p>float：left或right，不为none即可。</p>
+</li>
+<li><p>overflow:hidden\auto或scroll，不为visible即可。</p>
+</li>
+<li><p>display:inline-block\table-cell\table-caption\flex\inline-flex\grid或inline-grid。拥有这些属性的元素称为块级容器。</p>
+</li>
+<li><p>position:absolute或fixed。</p>
+</li>
+</ul>
+<p><strong>最常用简单的方式是overflow:auto</strong></p>
+</li>
 </ol>
-
+<h3 id="第五章：Flexbox"><a href="#第五章：Flexbox" class="headerlink" title="第五章：Flexbox"></a>第五章：Flexbox</h3><ol>
+<li><p>如何实现如下顶部菜单栏布局？</p>
+<p><img src="/10/《深入解析css》笔记/Hexo\source\_posts\《深入解析css》笔记\菜单.png" alt="菜单"></p>
+<p>用ul和li做元素，给ul设定flex布局，要把其中某几项推到右边，只需要在开始的那一项给上margin-left:auto；他就会自动分配所有的空间给margin-left；</p>
+</li>
+<li><p>flex属性：flex属性是个简写属性，具体是flex-grow，flex-shrink(默认1)，flex-basis(默认0%)。</p>
+<ul>
+<li><p>flex-basis是元素的初始尺寸，如果该元素有width，则将width作为尺寸，若没有，则由内容决定宽度，如果给定flex-basis，则无视width值。</p>
+</li>
+<li><p>flex-grow是元素的增长因子，也是拉伸比例，若容器内有剩余空间，则按照这个比例分配。</p>
+</li>
+<li>flex-shrink是元素的收缩比例，如果各元素的基本尺寸溢出的话，则以这个比例收缩。</li>
+</ul>
+</li>
+<li><p>对于input的一种伪类和属性选择器用法，可以参考下，其他地方应该也能用。</p>
+<p>input:not([type=checkbox]):not([type=radio]){xxxx}这样可以给文本类型的输入框（不包含复选框和单选按钮）添加样式。</p>
+</li>
+<li><p>flex-direction:column，这一条可以改变弹性盒子的弹性方向，将flex个属性应用到纵轴上。现在纵向才是主轴，横向才是副轴。</p>
+</li>
+<li>更多的flex属性见<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">阮一峰的flex布局教程</a></li>
+<li>一个建议：如果整个网页用一行多列的布局想用flexbox的话，可能会导致渲染过程中随着加载出来的内容而变化的现象，所以建议这种情况用网格布局。</li>
+<li>有些垃圾浏览器不支持flexbox，autoprefix这个插件可以自动添加前缀。</li>
+</ol>
+<h3 id="第六章：网格布局"><a href="#第六章：网格布局" class="headerlink" title="第六章：网格布局"></a>第六章：网格布局</h3>
       
     </div>
     
@@ -564,7 +606,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -619,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章：层叠、优先级和继承"><span class="nav-number">1.</span> <span class="nav-text">第一章：层叠、优先级和继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章：相对单位"><span class="nav-number">2.</span> <span class="nav-text">第二章：相对单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章：盒模型"><span class="nav-number">3.</span> <span class="nav-text">第三章：盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章：理解浮动"><span class="nav-number">4.</span> <span class="nav-text">第四章：理解浮动</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章：层叠、优先级和继承"><span class="nav-number">1.</span> <span class="nav-text">第一章：层叠、优先级和继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章：相对单位"><span class="nav-number">2.</span> <span class="nav-text">第二章：相对单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章：盒模型"><span class="nav-number">3.</span> <span class="nav-text">第三章：盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章：理解浮动"><span class="nav-number">4.</span> <span class="nav-text">第四章：理解浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五章：Flexbox"><span class="nav-number">5.</span> <span class="nav-text">第五章：Flexbox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六章：网格布局"><span class="nav-number">6.</span> <span class="nav-text">第六章：网格布局</span></a></li></ol></div>
             
 
           </div>

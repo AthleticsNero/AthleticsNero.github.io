@@ -88,7 +88,7 @@
 <meta property="og:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/10/《深入解析css》笔记/菜单.png">
-<meta property="og:updated_time" content="2021-03-14T04:35:16.796Z">
+<meta property="og:updated_time" content="2021-04-07T08:18:09.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《深入解析css》笔记">
 <meta name="twitter:description" content="第一章：层叠、优先级和继承 优先级：！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择器  两条经验法则：选择器少用id；少用!important。  使用inherit属性使元素属性继承自父元素，方便修改。">
@@ -482,7 +482,37 @@
 <li>一个建议：如果整个网页用一行多列的布局想用flexbox的话，可能会导致渲染过程中随着加载出来的内容而变化的现象，所以建议这种情况用网格布局。</li>
 <li>有些垃圾浏览器不支持flexbox，autoprefix这个插件可以自动添加前缀。</li>
 </ol>
-<h3 id="第六章：网格布局"><a href="#第六章：网格布局" class="headerlink" title="第六章：网格布局"></a>第六章：网格布局</h3>
+<h3 id="第六章：网格布局"><a href="#第六章：网格布局" class="headerlink" title="第六章：网格布局"></a>第六章：网格布局</h3><ol>
+<li><p>外层容器使用display:grid来定义一个网格容器，并使用grid-template-columns和grid-template-rows来定义列和行。可以使用固定的宽高(px单位)，可以使用相对的宽高(em单位)，也可以使用分数单位(fr单位)，和弹性因子一样的表现，代表占据的百分比。还可以使用repeat(4,1fr)来直接生成四行，也可以repeat(3,2fr 1fr)定义不同的重复模式来生成六行。</p>
+</li>
+<li><p>grid-gap属性定义网格单元间距。</p>
+</li>
+<li><p>网格单元可以用grid-column和grid-row来表示网格单元所占的网格编号。如grid-row:1/3;代表该单元横跨1到3行。实际上grid-column是grid-column-start和grid-column-end的简写，中间的斜杠只是区分两个值并不是分数形式。数值代表的是网格线，从1开始。还有使用span关键字如span 2，代表占据2行/列，不需要指定开始和结束位置。</p>
+</li>
+<li><p>Flexbox和网格布局并不互斥，而是互补的。他们的功能有重叠的地方，但各自擅长的场景不一样。</p>
+<ul>
+<li>Flexbox本质上是一维的，而网格是二维的。</li>
+<li>Flexbox是以内容为切入点由内向外工作的，而网格是以布局为切入点从外向内工作的。</li>
+</ul>
+<p>当设计要求元素在两个维度上都对齐时，使用网格。当只关心一维的元素排列时，使用Flexbox。</p>
+</li>
+<li><p>命名网格区域。不用计算或者命名网格线，直接用命名的网格区域将元素定位到网格中。实现这一方法需要借助网格容器的grid-template-areas和网格元素的grid-area属性。举个例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:grid;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>:<span class="string">"title title"</span></span><br><span class="line">        				<span class="string">"nav ."</span></span><br><span class="line">        				<span class="string">"main aside1"</span></span><br><span class="line">        				<span class="string">"main aside2"</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">2</span>fr <span class="number">1</span>fr;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>:<span class="built_in">repeat</span>(4,auto);</span><br><span class="line">    <span class="attribute">grid-gap</span>:<span class="number">1.5em</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.header</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>:title;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>:nav;</span><br><span class="line">&#125;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>grid-template-areas属性使用了一种ASCII art的语法，可以直接在CSS中画一个可视化的网格形象。该声明给出了一系列加引号字符串，每一个字符串代表网格的一行，字符串内用空格区分每一列。也可以用句点(.)作为名称空出一个网格单元。</p>
+<blockquote>
+<p>警告：每个命名的网格区域必须组成一个矩形。不能创造更复杂的形状，如L和U型。</p>
+</blockquote>
+</li>
+<li><p>要实现画廊的效果，需要用到隐式网格。给容器设置grid-auto-rows/columns:1fr;来为隐式网格轨道指定一个大小。列若不指定列数的话可以grid-template-columns:repeat(auto-fill,minmax(200px,1fr))来指定最小列宽为200px，自动填充网格。这里的auto-fill和minmax加在一起，就会让网格在可用的空间里尽可能多的产生网格列，并且每个列的宽度不会小于200px。如果网格元素不够填满所有网格轨道，auto-fill就会导致一些空的网格轨道。如果不希望出现空的网格轨道，可以使用auto-fit来代替auto-fill。它会让非空的网格轨道扩展，填满可用空间。</p>
+<p>在这种画廊效果中，我们常常会让某些元素变成两倍宽高，需要给它设定grid-row:span 2;来占据4倍网格。再给容器设置一个布局算法，一般用紧凑的网格布局算法，即grid-auto-flow:dense;但是这样的时候有些图片并不会因为占据四倍网格而放大到四倍，这里需要对图片进行放大，可以用flex纵向拉伸图片再配合object-fit属性保持图片宽高比。</p>
+<ul>
+<li>object-fit:cover; 扩展图片，让它填满盒子（导致图片一部分被裁剪）</li>
+<li>object-fit:contain; 缩放图片，让它完整地填充盒子（导致盒子里出现空白）</li>
+<li>object-fit:fill(默认)；会拉伸图片，很丑。</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     
@@ -606,7 +636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +658,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

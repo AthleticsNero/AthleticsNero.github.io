@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Vue@路径</title>
+      <link href="/2021/06/06/Vue-%E8%B7%AF%E5%BE%84/"/>
+      <url>/2021/06/06/Vue-%E8%B7%AF%E5%BE%84/</url>
+      
+        <content type="html"><![CDATA[<p>省去相对路径的麻烦，直接用@views来作为路径开头更加的方便</p><p>在vue.config.js里写入</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  ...</span><br><span class="line">  chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config.resolve.symlinks(<span class="literal">true</span>)</span><br><span class="line">    config.resolve.alias</span><br><span class="line">      .set(<span class="string">'@'</span>, resolve(<span class="string">'src'</span>))</span><br><span class="line">      .set(<span class="string">'@assets'</span>, resolve(<span class="string">'src/assets'</span>))</span><br><span class="line">      .set(<span class="string">'@components'</span>, resolve(<span class="string">'src/components'</span>))</span><br><span class="line">      .set(<span class="string">'@views'</span>, resolve(<span class="string">'src/views'</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> solution </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue自动注册组件</title>
+      <link href="/2021/06/06/Vue%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%86%8C%E7%BB%84%E4%BB%B6/"/>
+      <url>/2021/06/06/Vue%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%86%8C%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>Vue的组件要在其他地方使用得通过这三步</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;vuexxx/&gt;</span><br><span class="line">...</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp">import vuexxx from '@components/</span>vuexxx<span class="string">'</span></span><br><span class="line"><span class="string">export default&#123;</span></span><br><span class="line"><span class="string">    ...</span></span><br><span class="line"><span class="string">    components:[</span></span><br><span class="line"><span class="string">        vuexxx</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure><p>注册起来比较的繁琐。</p><p>这里记录一种自动注册的方式，把下面代码写入global.js放在components文件夹里。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">capitalizeFirstLetter</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> string.charAt(<span class="number">0</span>).toUpperCase() + string.slice(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> requireComponent = <span class="built_in">require</span>.context(</span><br><span class="line">  <span class="string">'.'</span>, <span class="literal">true</span>, /\.vue$/</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">requireComponent.keys().forEach(<span class="function"><span class="params">fileName</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> componentConfig = requireComponent(fileName)</span><br><span class="line">  <span class="keyword">const</span> componentName = capitalizeFirstLetter(</span><br><span class="line">    fileName.replace(<span class="regexp">/^\.\//</span>, <span class="string">''</span>).replace(<span class="regexp">/\.\w+$/</span>, <span class="string">''</span>)</span><br><span class="line">    <span class="comment">// 因为得到的filename格式是：'./componentX.vue',所以去掉头和尾保留真正的文件名</span></span><br><span class="line">  )</span><br><span class="line">  Vue.component(componentName, componentConfig.default || componentConfig)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> solution </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ES6笔记</title>
       <link href="/2021/05/21/es6/"/>
       <url>/2021/05/21/es6/</url>
